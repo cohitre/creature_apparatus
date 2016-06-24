@@ -1,0 +1,6 @@
+require_relative './models/character'
+require_relative './models/character_capture'
+require_relative './models/encounter_environment'
+require_relative './models/environment_membership'
+require_relative './models/player'
+require_relative './models/player_alias'
