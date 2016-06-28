@@ -40,12 +40,13 @@ class RandomEncounter
   end
 
   def to_slack_message
-    return { text: self.summary }
+    text = self.summary
+    text += "\n#{@player.last_captures.map(&:display_name).join(' ')}"
+    return { text: text }
   end
 
   def summary
     return 'There are no creatures around' unless battle?
-
     if captured?
       return "A random #{@character.display_name} appears.\nGotcha! #{@character.display_name} was caught!"
     else

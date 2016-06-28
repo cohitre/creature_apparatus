@@ -7,4 +7,8 @@ class Player < ActiveRecord::Base
     return nil if player_alias.nil?
     player_alias.player
   end
+
+  def last_captures(limit=10)
+    self.character_captures.limit(10).order('created_at DESC').map(&:character)
+  end
 end
