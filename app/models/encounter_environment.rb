@@ -2,11 +2,11 @@ class EncounterEnvironment < ActiveRecord::Base
   has_many :environment_memberships
 
   ENCOUNTER_RATE_MAPPINGS = {
-    very_common: 1.0,
-    common: 0.085,
-    semi_rate: 0.0675,
-    rare: 0.0333,
-    very_rare: 0.0125
+    very_common: 0.8,
+    common: 0.50,
+    semi_rare: 0.25,
+    rare: 0.10,
+    very_rare: 0.03
   }
 
   def encounter_probability
