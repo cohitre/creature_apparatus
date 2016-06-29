@@ -1,6 +1,6 @@
 class RandomEncounter
   def self.roll_random(player_name, environment_name)
-    player = Player.find_by_alias(player_name)
+    player = Player.find_or_create_by_alias(player_name)
     environment = EncounterEnvironment.find_by_name(environment_name)
 
     return self.new(player, environment, nil, nil) unless self.random_success?(environment.encounter_probability)
